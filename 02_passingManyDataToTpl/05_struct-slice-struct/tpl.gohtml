@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            How to pass struct-slice-struct into template
+        </title>
+    </head>
+    <body>
+        {{range .Teachers}}
+        <li>{{.Name}} - {{.Class}}</li>
+        {{end}}
+
+        {{range .Students}}
+        <li>{{.Name}} - {{.Age}}</li>
+        {{end}}
+    </body>
+</html>
