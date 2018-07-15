@@ -11,12 +11,12 @@ var tpl *template.Template
 
 type student struct {
 	Name string
-	age  int
+	Age  int
 }
 
 type teacher struct {
-	Name string
-	Kind string
+	Name    string
+	Subject string
 }
 
 var fm = template.FuncMap{
@@ -25,8 +25,8 @@ var fm = template.FuncMap{
 }
 
 func init() {
-	//tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
-	tpl = template.Must(template.ParseFiles("tpl.gohtml"))
+	//FUNCMAP ADD
+	tpl = template.Must(template.New("").Funcs(fm).ParseFiles("tpl.gohtml"))
 }
 
 func customFunc(s string) string {
@@ -40,39 +40,39 @@ func customFunc(s string) string {
 
 func main() {
 	nakamura := student{
-		"nakamura",
-		15,
+		Name: "nakamura",
+		Age:  15,
 	}
 
 	fuzimoto := student{
-		"fuzimoto",
-		15,
+		Name: "fuzimoto",
+		Age:  15,
 	}
 
 	wada := teacher{
-		"wada",
-		"computer",
+		Name:    "wada",
+		Subject: "computer",
 	}
 
 	hitomi := teacher{
-		"hitomo",
-		"c",
+		Name:    "hitomo",
+		Subject: "c",
 	}
 
 	students := []student{nakamura, fuzimoto}
 
 	teachers := []teacher{wada, hitomi}
 
+	/*structの変数名は大文字にすることを注意すること*/
 	data := struct {
-		st []student
-		te []teacher
+		St []student
+		Te []teacher
 	}{
 		students,
 		teachers,
 	}
 
-	//err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", data)
-	err := tpl.Execute(os.Stdout, data)
+	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", data)
 	if err != nil {
 		log.Fatalln(err)
 	}

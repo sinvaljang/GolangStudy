@@ -6,9 +6,12 @@
     </head>
     <body>
 
-        {{range .st}}
-        {{ .Name}}
+        {{range .St}}
+        name : {{ .Name}} - age : {{.Age}}
         {{end}}
-      
+
+        {{range .Te}}
+        name : {{.Name}} - subject : {{.Subject}}
+        {{end}}
     </body>
 </html>
