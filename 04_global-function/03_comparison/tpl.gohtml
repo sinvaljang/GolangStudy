@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            comparison
+        </title>
+    </head>
+    <body>
+        Math : {{.Math}}, Sci : {{.Sci}}
+
+        EX1) use gt
+        {{if gt .Math .Sci}}
+        Math > Sci
+        {{end}}
+
+        EX2) use lt
+        {{if lt .Math .Sci}}
+        Math < Sci
+        {{end}}
+
+        EX3) use eq
+        {{if eq .Math .Sci}}
+        Math == Sci
+        {{end}}
+
+        EX4) use lt
+        {{if lt .Math 90}}
+        Math < 90
+        {{end}}
+    </body>
+</html>

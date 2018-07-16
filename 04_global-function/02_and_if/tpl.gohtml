@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            use if
+        </title>
+    </head>
+    <body>
+        EX1)
+        {{range . }}
+            {{.}}
+        {{end}}
+
+        {{if . }}
+            EX2) {{.}}
+        {{end}}
+
+        {{range . }}
+            {{if .Name}}
+                EX3) {{.Name}}
+            {{end}}
+        {{end}}
+
+        {{range .}}
+            {{if and .Name .Admin}}
+                EX4) {{.Name}}
+                EX5) {{.Age}}
+                EX6) {{.Admin}}
+            {{end}}
+        {{end}}
+    </body>
+</html>
