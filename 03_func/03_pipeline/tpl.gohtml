@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>use pipeline</title>
+    </head>
+    <body>
+        value : {{.}}
+        double : {{. | func1 }}
+        double -> square : {{. | func1 | func2 }}
+        double -> square -> sqRoot : {{. | func1 | func2 | func3 }}
+    </body>
+</html>
