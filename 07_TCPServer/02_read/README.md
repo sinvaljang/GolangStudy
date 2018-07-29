@@ -1,5 +1,4 @@
-=How to use TCP read
--勉強すること
+How to use TCP read
 1. goroutine
 >>https://tour.golang.org/concurrency/1
 2. bufio
